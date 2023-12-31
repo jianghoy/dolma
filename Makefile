@@ -21,7 +21,7 @@ setup:
 	@echo "${OS_MESSAGE}: installing..."
 	$(shell "${CMAKE_SETUP}")
 	$(shell "${PROTOBUF_SETUP}")
-	$(shell "${OPENSSL_SETUP}")
+	# $(shell "${OPENSSL_SETUP}")
 	which cargo || curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 	which maturin || pip install maturin[patchelf]
 
@@ -49,3 +49,17 @@ style:
 	autopep8 --in-place --recursive tests/python/
 	isort tests/python/
 	black tests/python/
+
+# generate a help method that lists all targets
+help:
+	@echo "Available targets:"
+	@echo
+	@echo "  setup: install dependencies"
+	@echo "  publish: publish to pypi"
+	@echo "  test: run all tests"
+	@echo "  test-python: run python tests"
+	@echo "  test-rust: run rust tests"
+	@echo "  develop: install in development mode"
+	@echo "  style: format code"
+	@echo "  help: print this help message"
+	@echo
