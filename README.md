@@ -9,7 +9,7 @@ I encountered Dolma from [RedPajama 2's data preparation package](https://github
 Now that also means we would lose a fasttext classifier metric. Haven't quite figure that part out yet, maybe just try to rebuild it into tagging?
 
 ## TODO:
-fix `make setup`  stuck at `openssl` and
+fix `make setup`  stuck at `openssl`. (right now it works by simply comment out install openssl part, which is a hack.)
 ```
 ERROR: Could not build wheels for patchelf, which is required to install pyproject.toml-based projects
 ```
